@@ -16,6 +16,7 @@ import com.m7awas.car.rest.ParseResponse;
 import com.m7awas.car.rest.RetrofitClient;
 
 import java.util.List;
+import java.util.jar.JarException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,8 +41,16 @@ public class MainActivity extends AppCompatActivity {
                 {
                     if (response.body() != null)
                     {
-                        initCarsRV(ParseResponse.parseCars(response.body()));
-                        addScrollListener();
+                        try
+                        {
+                            initCarsRV(ParseResponse.parseCars(response.body()));
+                            addScrollListener();
+                        } catch (UnsupportedOperationException e)
+                        {
+                            Toast.makeText(MainActivity.this, "response returns a null value", Toast.LENGTH_LONG).show();
+                            e.printStackTrace();
+                        }
+
                     }
                 }
                 else

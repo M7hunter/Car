@@ -26,7 +26,7 @@ public class RetrofitClient {
                 .create();
 
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("http://demo1286023.mockable.io/api/v1/")
+                .baseUrl("https://demo1286023.mockable.io/api/v1/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();

@@ -18,9 +18,9 @@ public class ParseResponse {
             JsonObject carObj = arr.get(i).getAsJsonObject();
 
             cars.add(new Car(carObj.get("id").getAsInt()
-                    , carObj.get("imageUrl").getAsString()
                     , carObj.get("brand").getAsString()
                     , carObj.get("constructionYear").getAsString()
+                    , carObj.get("imageUrl").getAsString()
                     , carObj.get("isUsed").getAsBoolean()));
         }
 
