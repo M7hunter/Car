@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Car</string>
+    <string name="latest_cars">Latest Cars:</string>
+</resources>
